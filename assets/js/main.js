@@ -365,3 +365,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Confirmación de borrado de misiones
 
 // Sincronización del Hada
+
+// Conteo de misiones corrompidas
