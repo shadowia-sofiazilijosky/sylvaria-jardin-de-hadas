@@ -374,4 +374,6 @@ function crearPolvoDeHadas() { /* ... */ }
 
 // Alertas de la poción de luz
 
+// Verificación del oráculo
+
 
