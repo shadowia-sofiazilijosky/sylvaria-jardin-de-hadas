@@ -376,4 +376,6 @@ function crearPolvoDeHadas() { /* ... */ }
 
 // Verificación del oráculo
 
+// Fin de la integración principal
+
 
