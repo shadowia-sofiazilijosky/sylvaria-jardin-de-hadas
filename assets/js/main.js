@@ -369,3 +369,7 @@ function crearPolvoDeHadas() { /* ... */ }
 // Conteo de misiones corrompidas
 
 // Limpieza de caché local
+
+// Renderizado de tarjetas de misión
+
+
