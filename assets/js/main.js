@@ -367,3 +367,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Sincronización del Hada
 
 // Conteo de misiones corrompidas
+
+// Limpieza de caché local
