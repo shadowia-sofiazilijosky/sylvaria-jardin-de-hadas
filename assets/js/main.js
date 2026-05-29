@@ -349,3 +349,5 @@ function eliminarMision(id) {
 }
 
 function crearPolvoDeHadas() { /* ... */ }
+
+// Revisión de estructura de datos
