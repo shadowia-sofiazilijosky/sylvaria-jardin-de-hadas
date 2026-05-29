@@ -359,3 +359,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Revisando cálculos de experiencia
 
 // Optimización de sonidos mágicos
+
+// Ajuste de filtros del Invernadero
