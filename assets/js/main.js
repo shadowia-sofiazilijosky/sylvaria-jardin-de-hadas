@@ -363,3 +363,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Ajuste de filtros del Invernadero
 
 // Confirmación de borrado de misiones
+
+// Sincronización del Hada
