@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylvaria - Jardín de Hadas</title>
+    <link rel="icon" type="image/png" href="./assets/img/favicon.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="./assets/js/main.js" defer></script>
+</head>
+<body class="tema-jardin">
+    <div id="contenedor-polvo-hadas"></div>
+
+    <main class="portal-ingreso">
+        <section class="panel-cristal" id="paso-nombre" style="max-width: 650px; width: 100%; margin: 0 auto; text-align: center;">
+            
+            <div class="logo-flotante-imagen" style="margin-bottom: 1rem; width: 100%;">
+                <img src="./assets/img/logo-sylvaria.png" alt="Sylvaria Logo Fae" style="width: 100%; height: auto; filter: drop-shadow(0 0 15px rgba(244, 174, 185, 0.4));">
+            </div>
+
+            <h2 class="titulo-fae" style="font-size: 2.6rem; margin-top: -10px; margin-bottom: 1.5rem; letter-spacing: 3px;">JARDÍN DE HADAS</h2>
+            
+            <p class="subtitulo">Forja tu destino y vence a La Niebla del Letargo</p>
+            
+            <form id="form-bienvenida" class="formulario-fae" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="grupo-input">
+                    <label for="nombre-jugador" style="font-size: 1.3rem; font-weight: bold; color: var(--color-rosa-magico); display: block; margin-bottom: 10px;">Revela tu nombre al bosque:</label>
+                    <input type="text" id="nombre-jugador" placeholder="Ej. Sofía..." required style="width: 100%; padding: 15px; background: rgba(0,0,0,0.5); color: white; border: 1px solid var(--color-oro-fae); border-radius: 10px; font-size: 1.4rem; text-align: center; outline: none;">
+                </div>
+                <button type="submit" class="btn-magico" 
+                        onmouseover="playSFX('crystals')" 
+                        onclick="playSFX('crystals')"
+                        style="width: 100%; max-width: 320px; margin: 10px auto 0 auto; display: block;">Despertar Magia</button>
+            </form>
+        </section>
+
+        <section class="panel-cristal" id="paso-personaje" style="display: none; max-width: 900px;">
+            <h2 class="titulo-fae">Elige tu Linaje</h2>
+            <p class="subtitulo">¿Qué forma tomará tu espíritu?</p>
+            
+            <div class="grid-reinos">
+                <div class="tarjeta-personaje" data-personaje="hada" onclick="playSFX('chimes')">
+                    <img src="./assets/img/hada-nivel3.png" alt="Hada">
+                    <h3>Hada del Loto</h3>
+                </div>
+                <div class="tarjeta-personaje" data-personaje="guerrero" onclick="playSFX('chimes')">
+                    <img src="./assets/img/guerrero-nivel3.png" alt="Guerrero Fae">
+                    <h3>Guerrero Fae</h3>
+                </div>
+                <div class="tarjeta-personaje" data-personaje="orco" onclick="playSFX('chimes')">
+                    <img src="./assets/img/orco-nivel3.png" alt="Orco">
+                    <h3>Orco Bestial</h3>
+                </div>
+                <div class="tarjeta-personaje" data-personaje="hechicera" onclick="playSFX('chimes')">
+                    <img src="./assets/img/hechicera-nivel3.png" alt="Hechicera">
+                    <h3>Hechicera Arcana</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel-cristal" id="paso-reino" style="display: none; max-width: 1000px;">
+            <h2 class="titulo-fae">Elige tu Reino</h2>
+            <p class="subtitulo">¿Dónde forjarás tu leyenda?</p>
+            
+            <div class="grid-reinos">
+                <div class="tarjeta-reino" data-tema="tema-jardin" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-juego.png" alt="Jardín">
+                    <h3>Jardín de Loto</h3>
+                </div>
+                <div class="tarjeta-reino" data-tema="tema-bosque" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-bosque.png" alt="Bosque">
+                    <h3>Bosque Oscuro</h3>
+                </div>
+                <div class="tarjeta-reino" data-tema="tema-castillo" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-castillo.png" alt="Castillo">
+                    <h3>Castillo Fae</h3>
+                </div>
+                <div class="tarjeta-reino" data-tema="tema-armeria" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-armeria.png" alt="Armería">
+                    <h3>Salón de Armas</h3>
+                </div>
+                <div class="tarjeta-reino" data-tema="tema-fuerte-orco" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-fuerte-orco.png" alt="Fuerte Orco">
+                    <h3>Fuerte Volcánico</h3>
+                </div>
+                <div class="tarjeta-reino" data-tema="tema-caverna-mistica" onclick="playSFX('chimes')">
+                    <img src="./assets/img/fondo-caverna-mistica.png" alt="Caverna">
+                    <h3>Caverna Mística</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

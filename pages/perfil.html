@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución - Sylvaria</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-jardin">
+    <div id="contenedor-polvo-hadas"></div>
+
+    <header class="header-magico">
+        <h1 class="titulo-fae">Registro de Magia</h1>
+        <nav>
+            <a href="invernadero.html" class="btn-magico btn-chico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')">Volver al Invernadero</a>
+        </nav>
+    </header>
+
+    <main class="portal-ingreso">
+        <section class="panel-cristal" id="estadisticas-perfil" style="max-width: 900px; width: 100%;">
+            <h2 class="titulo-fae">Tu Leyenda</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>Experiencia Total</h3>
+                    <p id="perfil-xp" class="stat-numero">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Misiones Completadas</h3>
+                    <p id="perfil-completadas" class="stat-numero">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Misiones Corrompidas</h3>
+                    <p id="perfil-corrompidas" class="stat-numero">0</p>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 2px solid var(--color-oro-fae); margin: 3rem 0; opacity: 0.5;">
+
+            <h3 class="subtitulo" style="font-size: 2.2rem;">Transformación de Esencia</h3>
+            <form id="form-personaje" class="formulario-fae" style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin-bottom: 3rem;">
+                <label for="selector-personaje" style="color: var(--color-rosa-magico); font-size: 1.6rem; font-weight: bold; text-align: center;">Elige tu nuevo linaje ancestral:</label>
+                
+                <select id="selector-personaje" required style="padding: 15px 20px; background: rgba(0,0,0,0.6); color: white; border: 2px solid var(--color-oro-fae); border-radius: 12px; font-family: var(--fuente-textos); font-size: 1.5rem; width: 100%; max-width: 450px; cursor: pointer;">
+                    <option value="hada">Hada del Loto (Lyra)</option>
+                    <option value="guerrero">Guerrero Fae (Kael)</option>
+                    <option value="orco">Orco Bestial (Grom)</option>
+                    <option value="hechicera">Hechicera Arcana (Elara)</option>
+                </select>
+                
+                <button type="submit" class="btn-magico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')" style="background: linear-gradient(45deg, var(--color-oro-fae), var(--color-rosa-magico)); color: #1a0f18; padding: 15px 40px; font-size: 1.4rem; width: 100%; max-width: 450px;">Cambiar de Personaje</button>
+            </form>
+
+            <h3 class="subtitulo" style="font-size: 2.2rem;">Portal de los Reinos</h3>
+            <form id="form-fondos" class="formulario-fae" style="display: flex; flex-direction: column; gap: 20px; align-items: center; margin-bottom: 3rem;">
+                <label for="selector-fondo" style="color: var(--color-rosa-magico); font-size: 1.6rem; font-weight: bold; text-align: center;">Elige tu escenario de poder:</label>
+                
+                <select id="selector-fondo" required style="padding: 15px 20px; background: rgba(0,0,0,0.6); color: white; border: 2px solid var(--color-oro-fae); border-radius: 12px; font-family: var(--fuente-textos); font-size: 1.5rem; width: 100%; max-width: 450px; cursor: pointer;">
+                    <option value="tema-jardin">Jardín de Loto (Original)</option>
+                    <option value="tema-bosque">Bosque Oscuro</option>
+                    <option value="tema-castillo">Castillo Fae</option>
+                    <option value="tema-armeria">Salón de Armas Fae</option>
+                    <option value="tema-fuerte-orco">Fuerte Volcánico</option>
+                    <option value="tema-caverna-mistica">Caverna Mística</option>
+                </select>
+                
+                <button type="submit" class="btn-magico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')" style="background: linear-gradient(45deg, #4da6ff, #d966ff); padding: 15px 40px; font-size: 1.4rem; width: 100%; max-width: 450px;">Viajar a este Reino</button>
+            </form>
+
+            <button id="btn-reiniciar" class="btn-magico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')" style="background: #ff4d4d; color: white; width: 100%; padding: 15px; font-size: 1.4rem; margin-top: 1rem;">Renacer (Borrar Datos)</button>
+        </section>
+    </main>
+</body>
+</html>

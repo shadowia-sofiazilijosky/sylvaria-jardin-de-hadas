@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invernadero - Sylvaria</title>
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="../assets/js/main.js" defer></script>
+</head>
+<body class="tema-jardin">
+    <div id="contenedor-polvo-hadas"></div>
+
+    <header class="header-magico">
+        <h1 class="titulo-fae" id="saludo-jugador">Bienvenida</h1>
+        <nav>
+            <a href="perfil.html" class="btn-magico btn-chico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')">Mi Evolución</a>
+            <button id="btn-salir" class="btn-magico btn-chico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')">Abandonar Reino</button>
+        </nav>
+    </header>
+
+    <main class="contenedor-grid">
+        <aside class="panel-hada panel-cristal">
+            <h2 class="subtitulo">Tu Forma Actual</h2>
+            
+            <div id="globo-dialogo" class="globo-magico">
+                <p id="texto-dialogo">...</p>
+            </div>
+
+            <img id="imagen-hada" src="../assets/img/hada-nivel1.png" alt="Avatar" class="hada-animada">
+            
+            <div class="barra-xp-contenedor">
+                <p>Nivel de Magia (XP): <span id="contador-xp">0</span> / 1000</p>
+                <div class="barra-fondo">
+                    <div id="barra-progreso" class="barra-llena"></div>
+                </div>
+            </div>
+            <p id="mensaje-estado" class="mensaje-magico">Las ninfas confían en ti...</p>
+            
+            <div class="pocion-magica">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+                    <img id="imagen-pocion" src="../assets/img/pocion.png" alt="Poción" style="cursor: pointer; width: 60px;">
+                    <div style="text-align: left;">
+                        <p id="texto-pocion" style="margin: 0; font-size: 1.1rem;">Poción de Luz (Doble XP)</p>
+                        <span id="contador-pocion" style="display: block; font-weight: bold; color: var(--color-oro-fae); font-size: 0.9rem;"></span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="panel-misiones panel-cristal">
+            <h2 class="subtitulo">Forjar Nuevo Decreto</h2>
+            <form id="form-misiones" class="formulario-fae form-horizontal">
+                <input type="text" id="titulo-mision" placeholder="Ej: Escribir el próximo capítulo..." required>
+                <select id="prioridad-mision" required>
+                    <option value="" disabled selected>Nivel de urgencia...</option>
+                    <option value="alta">Decreto Mayor (Alta)</option>
+                    <option value="media">Petición Silfa (Media)</option>
+                    <option value="baja">Capricho de Ninfa (Baja)</option>
+                </select>
+                <select id="tiempo-mision" required>
+                    <option value="" disabled selected>Plazo de tiempo...</option>
+                    <option value="1">1 día (Ciclo corto)</option>
+                    <option value="3">3 días (Ciclo medio)</option>
+                    <option value="7">7 días (Ciclo largo)</option>
+                </select>
+                <button type="submit" class="btn-magico" onmouseover="playSFX('crystals')" onclick="playSFX('crystals')">Sellar</button>
+            </form>
+            
+            <div id="contenedor-oraculo" class="oraculo-magico">
+                <p style="color: var(--color-rosa-magico); font-family: var(--fuente-titulos); margin-bottom: 5px; font-size: 1.2rem;">Oráculo Rúnico</p>
+                <img id="dado-oraculo" src="../assets/img/dado.png" alt="Dado Rúnico" title="Lanza el dado">
+            </div>
+
+            <h3 class="subtitulo mt-2">Decretos Activos</h3>
+            <div id="contenedor-tarjetas" class="grid-tarjetas"></div>
+        </section>
+
+        <div id="pergamino-modal" class="oculto">
+            <div class="pergamino-contenido">
+                <h3 style="color: #4a2c40; font-family: var(--fuente-titulos); font-size: 2rem;">El Destino ha Hablado</h3>
+                <p style="color: #2a1525; font-style: italic; margin-top: 10px;">Las runas dictan que debes cumplir esta misión primero:</p>
+                <p id="texto-destino" style="color: #6a1b9a; font-size: 1.5rem; font-weight: bold; margin: 20px 0;">...</p>
+                <button id="btn-cerrar-pergamino" class="btn-magico btn-chico" onclick="playSFX('arcane')" style="background: #2a1525; color: var(--color-oro-fae); border: 1px solid var(--color-oro-fae);">Aceptar mi Destino</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,500 @@
+/* =========================================
+   SYLVARIA: JARDÍN DE HADAS - HOJA DE ESTILOS
+   ========================================= */
+
+:root {
+    --color-texto: #f9f1f4;
+    --color-oro-fae: #e6c27a;
+    --color-rosa-magico: #f4aeb9;
+    --color-cristal: rgba(30, 15, 35, 0.65);
+    --fuente-titulos: 'Cinzel Decorative', cursive;
+    --fuente-textos: 'Cormorant Garamond', serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--fuente-textos);
+    color: var(--color-texto);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    transition: background-image 0.5s ease-in-out; 
+    font-size: 1.2rem; 
+}
+
+/* --- TEMAS DE FONDO GLOBAL --- */
+.tema-jardin { background-image: url('../img/fondo-juego.png') !important; }
+.tema-bosque { background-image: url('../img/fondo-bosque.png') !important; }
+.tema-castillo { background-image: url('../img/fondo-castillo.png') !important; }
+.tema-armeria { background-image: url('../img/fondo-armeria.png') !important; }
+.tema-fuerte-orco { background-image: url('../img/fondo-fuerte-orco.png') !important; }
+.tema-caverna-mistica { background-image: url('../img/fondo-caverna-mistica.png') !important; }
+
+/* --- COMPONENTES GLOBALES --- */
+.mt-2 { margin-top: 2rem; }
+
+.panel-cristal {
+    background: var(--color-cristal);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem; 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.titulo-fae {
+    font-family: var(--fuente-titulos);
+    color: var(--color-oro-fae);
+    text-shadow: 0 0 10px rgba(230, 194, 122, 0.5);
+    text-align: center;
+    font-size: 3rem; 
+}
+
+.subtitulo { 
+    font-size: 1.8rem; 
+    font-style: italic; 
+    text-align: center; 
+    margin-bottom: 1.5rem;
+}
+
+.btn-magico {
+    font-family: var(--fuente-titulos);
+    font-size: 1.3rem; 
+    font-weight: bold;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, var(--color-oro-fae), #c9983f);
+    color: #2a1525;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-magico:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--color-oro-fae); }
+
+/* --- POLVO DE HADAS --- */
+#contenedor-polvo-hadas {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 1;
+}
+.particula-polvo {
+    position: absolute; background-color: white; border-radius: 50%;
+    box-shadow: 0 0 8px 2px var(--color-rosa-magico);
+    animation: caer linear infinite;
+}
+@keyframes caer {
+    0% { transform: translateY(-10px); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* --- PORTAL DE INGRESO --- */
+.portal-ingreso { display: flex; justify-content: center; align-items: center; min-height: 80vh; position: relative; z-index: 10; padding: 20px;}
+.grupo-input { display: flex; flex-direction: column; gap: 15px; margin-bottom: 2rem; }
+.grupo-input input {
+    padding: 15px; 
+    font-family: var(--fuente-textos); 
+    font-size: 1.5rem; 
+    border: none; border-bottom: 2px solid var(--color-oro-fae);
+    background: rgba(0, 0, 0, 0.3); color: white; text-align: center; outline: none;
+}
+
+/* --- TARJETAS DE SELECCIÓN DE REINO EN EL PORTAL --- */
+.grid-reinos {
+    display: flex;
+    gap: 25px; 
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 65vh; 
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.tarjeta-reino {
+    border: 2px solid var(--color-oro-fae);
+    border-radius: 15px;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 260px; 
+}
+
+.tarjeta-reino img {
+    width: 100%;
+    height: 150px; 
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-reino h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rosa-magico);
+    font-size: 1.4rem; 
+}
+
+.tarjeta-reino:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--color-oro-fae);
+    border-color: #fff;
+}
+
+/* --- TARJETAS DE PERSONAJE --- */
+.tarjeta-personaje {
+    border: 2px solid var(--color-oro-fae);
+    border-radius: 15px;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 260px; 
+}
+
+.tarjeta-personaje img {
+    width: 100%;
+    height: 220px; 
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-personaje h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-rosa-magico);
+    font-size: 1.4rem; 
+}
+
+.tarjeta-personaje:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--color-oro-fae);
+    border-color: #fff;
+}
+
+/* --- INVERNADERO (TABLERO PRINCIPAL) --- */
+.header-magico {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 2.5rem; background: var(--color-cristal); position: relative; z-index: 10;
+}
+
+.header-magico h1 {
+    font-size: 2.2rem;
+}
+
+.contenedor-grid {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; padding: 2.5rem;
+    max-width: 1400px; 
+    margin: 0 auto; position: relative; z-index: 10;
+}
+
+.hada-animada { 
+    width: 100%; 
+    max-width: 320px; 
+    display: block; 
+    margin: 0 auto; 
+    animation: flotar 4s ease-in-out infinite; 
+    transition: filter 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+}
+@keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
+.barra-xp-contenedor p {
+    font-size: 1.3rem; 
+    font-weight: bold;
+    text-align: center;
+}
+
+.mensaje-magico {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 10px;
+}
+
+.barra-fondo { width: 100%; height: 20px; background: rgba(0,0,0,0.5); border-radius: 10px; margin-top: 8px; }
+.barra-llena { height: 100%; background: linear-gradient(90deg, var(--color-rosa-magico), var(--color-oro-fae)); width: 0%; transition: width 0.5s; border-radius: 10px; }
+
+/* --- GLOBO DE DIÁLOGO MÁGICO --- */
+.globo-magico {
+    background: rgba(30, 15, 35, 0.85);
+    border: 1px solid var(--color-oro-fae);
+    border-radius: 15px;
+    padding: 20px; 
+    margin-bottom: 25px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(230, 194, 122, 0.3);
+    text-align: center;
+    font-style: italic;
+    color: var(--color-texto);
+    font-size: 1.3rem; 
+    line-height: 1.4;
+    animation: flotar-globo 4s ease-in-out infinite;
+}
+
+.globo-magico::after {
+    content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+    border-width: 10px 10px 0; border-style: solid; border-color: rgba(30, 15, 35, 0.85) transparent transparent transparent;
+}
+
+.globo-magico::before {
+    content: ''; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
+    border-width: 11px 11px 0; border-style: solid; border-color: var(--color-oro-fae) transparent transparent transparent; z-index: -1;
+}
+
+.nombre-avatar {
+    color: var(--color-rosa-magico);
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    font-size: 1.6rem; 
+    display: block;
+    margin-bottom: 8px;
+    font-style: normal;
+}
+
+@keyframes flotar-globo {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* --- POCIÓN MÁGICA (FRASCO) --- */
+.pocion-magica {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 20px; 
+    border-radius: 15px;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--color-oro-fae);
+    transition: all 0.3s ease;
+}
+
+#imagen-pocion {
+    width: 100px; 
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.pocion-disponible #imagen-pocion { filter: drop-shadow(0 0 15px #5cd65c); }
+.pocion-disponible #imagen-pocion:hover { transform: scale(1.1) rotate(5deg); }
+.pocion-activa { border-color: #5cd65c; box-shadow: 0 0 20px rgba(92, 214, 92, 0.4); }
+.pocion-activa #imagen-pocion { filter: drop-shadow(0 0 25px #5cd65c) brightness(1.5); animation: latido-runico 1.5s infinite; }
+.pocion-cooldown { border-color: #404040; }
+.pocion-cooldown #imagen-pocion { filter: grayscale(100%) opacity(0.5); cursor: not-allowed; }
+
+#texto-pocion {
+    font-family: var(--fuente-titulos);
+    color: var(--color-oro-fae);
+    margin-top: 15px;
+    font-size: 1.3rem; 
+}
+
+#temporizador-pocion {
+    color: #ff4d4d;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* --- FORMULARIOS --- */
+.form-horizontal { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 2rem; }
+.form-horizontal input, .form-horizontal select {
+    flex: 1; min-width: 180px; padding: 15px; background: rgba(0,0,0,0.4);
+    color: white; border: 1px solid var(--color-oro-fae); border-radius: 8px;
+    font-size: 1.2rem; 
+}
+
+/* =========================================
+   NUEVAS TARJETAS DE MISIONES FAE (CRISTAL OSCURO)
+   ========================================= */
+.grid-tarjetas { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px; 
+    max-height: 55vh; 
+    overflow-y: auto; 
+    padding-right: 10px; 
+}
+
+.tarjeta-mision { 
+    background: linear-gradient(135deg, rgba(40, 15, 50, 0.85) 0%, rgba(20, 5, 30, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(244, 174, 185, 0.3); /* Borde rosa tenue */
+    border-radius: 15px; /* Elegante y redondeado, sin puntas raras */
+    padding: 20px; 
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6), inset 0 0 15px rgba(244, 174, 185, 0.1); /* Brillo interno mágico */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reflejo superior como si fuera de cristal */
+.tarjeta-mision::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 40%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+    pointer-events: none;
+}
+
+.tarjeta-mision:hover { 
+    transform: translateY(-5px) scale(1.02); 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8), inset 0 0 20px rgba(230, 194, 122, 0.2);
+    border-color: var(--color-oro-fae);
+}
+
+.tarjeta-mision h4 { 
+    font-family: var(--fuente-titulos); 
+    color: var(--color-oro-fae) !important; /* Dorado fae */
+    text-shadow: 0 0 10px rgba(230, 194, 122, 0.8); /* Letra brillante */
+    margin-bottom: 10px;
+    font-size: 1.5rem; 
+    border-bottom: 1px solid rgba(244, 174, 185, 0.3); /* Línea divisoria fae */
+    padding-bottom: 8px;
+}
+
+.tarjeta-mision p, .tarjeta-mision small { 
+    color: var(--color-texto) !important; 
+    font-weight: normal;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Brillos mágicos para las prioridades (Aura brillante lateral) */
+.prioridad-alta { border-left: 6px solid #ff4d4d; box-shadow: -8px 0 20px -5px #ff4d4d, inset 0 0 15px rgba(244, 174, 185, 0.1); }
+.prioridad-media { border-left: 6px solid #4da6ff; box-shadow: -8px 0 20px -5px #4da6ff, inset 0 0 15px rgba(244, 174, 185, 0.1); }
+.prioridad-baja { border-left: 6px solid #d966ff; box-shadow: -8px 0 20px -5px #d966ff, inset 0 0 15px rgba(244, 174, 185, 0.1); }
+
+.mision-completada { border-color: #5cd65c !important; filter: brightness(0.8) grayscale(30%); box-shadow: 0 0 15px rgba(92, 214, 92, 0.2); }
+.mision-corrompida { border-color: #404040 !important; filter: grayscale(100%) opacity(0.6); box-shadow: none; }
+
+.btn-accion { padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1.1rem; margin-top: 15px; margin-right: 10px;}
+.btn-check { background: #5cd65c; color: black; }
+.btn-eliminar { background: #ff4d4d; color: white; }
+
+/* --- PERFIL --- */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2.5rem 0; }
+.stat-box { background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 10px; text-align: center; border: 1px solid var(--color-oro-fae); }
+.stat-box h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.stat-numero { font-size: 3.5rem; color: var(--color-rosa-magico); font-family: var(--fuente-titulos); }
+
+/* --- ORÁCULO RÚNICO (DADO Y ANIMACIÓN) --- */
+.oraculo-magico {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 20px;
+    background: var(--color-cristal);
+    backdrop-filter: blur(5px);
+    border: 2px solid var(--color-oro-fae);
+    border-radius: 15px 50px 15px 50px; 
+    box-shadow: 0 0 20px rgba(244, 174, 185, 0.4), inset 0 0 30px rgba(230, 194, 122, 0.2);
+}
+
+.oraculo-magico p {
+    font-size: 1.6rem !important; 
+    font-weight: bold;
+    color: var(--color-rosa-magico) !important;
+    text-shadow: 0 0 8px rgba(244, 174, 185, 0.8);
+}
+
+#dado-oraculo {
+    width: 100px; 
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 10px var(--color-rosa-magico));
+    margin-top: 10px;
+}
+
+#dado-oraculo:hover { transform: scale(1.1); filter: drop-shadow(0 0 25px #d966ff); }
+.girando { animation: rodarDado 1s ease-in-out; }
+
+@keyframes rodarDado {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(360deg) scale(1.4); }
+    100% { transform: rotate(720deg) scale(1); }
+}
+
+/* =========================================
+   EL MENSAJE DEL ORÁCULO (MODAL FAE DE CRISTAL)
+   ========================================= */
+#pergamino-modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8); display: flex; justify-content: center; align-items: center;
+    z-index: 1000; backdrop-filter: blur(8px);
+}
+.oculto { display: none !important; }
+
+/* Renombramos visualmente pero mantenemos la clase para no romper JS */
+.pergamino-contenido {
+    background: rgba(30, 15, 35, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px; 
+    border-radius: 20px; 
+    border: 2px solid var(--color-oro-fae);
+    box-shadow: 0 0 40px rgba(244, 174, 185, 0.4), inset 0 0 30px rgba(230, 194, 122, 0.1);
+    text-align: center; max-width: 600px; width: 90%;
+    transform: scale(0.8); animation: aparecerPergamino 0.5s forwards ease-out;
+    color: var(--color-texto);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Reflejo cristalino del modal */
+.pergamino-contenido::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 30%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.05), transparent);
+    pointer-events: none;
+}
+
+.pergamino-contenido h3 { 
+    font-size: 2.8rem !important; 
+    color: var(--color-oro-fae) !important; 
+    text-shadow: 0 0 15px rgba(230, 194, 122, 0.8); 
+    font-family: var(--fuente-titulos);
+}
+.pergamino-contenido p { 
+    font-size: 1.5rem !important; 
+    margin-top: 15px; 
+    color: var(--color-texto) !important; 
+}
+#texto-destino { 
+    font-size: 2.2rem !important; 
+    color: var(--color-rosa-magico) !important; 
+    text-shadow: 0 0 15px rgba(244, 174, 185, 0.8); 
+    font-family: var(--fuente-titulos);
+    padding: 20px 0;
+}
+
+@keyframes aparecerPergamino { to { transform: scale(1); } }
+
+/* --- DESTELLO Y MARCHITAMIENTO --- */
+.destello-runico {
+    border: 2px solid #d966ff !important;
+    box-shadow: 0 0 30px #d966ff !important;
+    animation: latido-runico 1.5s infinite;
+}
+@keyframes latido-runico { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+
+.hada-marchita {
+    filter: grayscale(80%) sepia(40%) hue-rotate(-30deg) !important;
+    animation: none !important;
+    transform: translateY(10px) !important;
+    opacity: 0.7 !important;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 768px) {
+    .contenedor-grid { grid-template-columns: 1fr; }
+    .header-magico { flex-direction: column; gap: 10px; text-align: center; }
+    .stats-grid { grid-template-columns: 1fr; }
+}
