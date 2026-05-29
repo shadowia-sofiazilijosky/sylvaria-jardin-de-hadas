@@ -372,4 +372,6 @@ function crearPolvoDeHadas() { /* ... */ }
 
 // Renderizado de tarjetas de misión
 
+// Alertas de la poción de luz
+
 
