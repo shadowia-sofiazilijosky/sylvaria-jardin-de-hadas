@@ -361,3 +361,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Optimización de sonidos mágicos
 
 // Ajuste de filtros del Invernadero
+
+// Confirmación de borrado de misiones
