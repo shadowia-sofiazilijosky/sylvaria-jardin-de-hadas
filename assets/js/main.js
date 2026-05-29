@@ -353,3 +353,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Revisión de estructura de datos
 
 // Validando variables del Storage
+
+// Preparando carga de misiones
