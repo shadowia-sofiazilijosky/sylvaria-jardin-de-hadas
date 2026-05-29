@@ -351,3 +351,5 @@ function eliminarMision(id) {
 function crearPolvoDeHadas() { /* ... */ }
 
 // Revisión de estructura de datos
+
+// Validando variables del Storage
