@@ -357,3 +357,5 @@ function crearPolvoDeHadas() { /* ... */ }
 // Preparando carga de misiones
 
 // Revisando cálculos de experiencia
+
+// Optimización de sonidos mágicos
