@@ -73,8 +73,8 @@ La arquitectura de carpetas se organiza de manera rigurosa y limpia respetando l
 
 🔗 LINKS DEL PROYECTO
 
-🖥️ Repositorio: [https://github.com/shadowia-sofiazilijosky/sylvaria-jardin-de-hadas]
-🌐 Deploy Funcional: [Enlace al deploy oficial del sitio web]
+🖥️ Repositorio: https://github.com/shadowia-sofiazilijosky/sylvaria-jardin-de-hadas
+🌐 Deploy Funcional: https://shadowia-sofiazilijosky.github.io/sylvaria-jardin-de-hadas/
 
 ## 🤖 USO DE INTELIGENCIA ARTIFICIAL
 
