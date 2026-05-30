@@ -348,7 +348,59 @@ function eliminarMision(id) {
     renderizarMisiones();
 }
 
-function crearPolvoDeHadas() { /* ... */ }
+// Esperar a que toda la página cargue para encender la magia
+document.addEventListener("DOMContentLoaded", () => {
+    crearPolvoDeHadas();
+});
+
+function crearPolvoDeHadas() {
+    const contenedor = document.getElementById('contenedor-polvo-hadas');
+    
+    if (!contenedor) return;
+
+    // Forzar para que ocupe toda la pantalla
+    contenedor.style.position = 'fixed';
+    contenedor.style.top = '0';
+    contenedor.style.left = '0';
+    contenedor.style.width = '100vw';
+    contenedor.style.height = '100vh';
+    contenedor.style.pointerEvents = 'none';
+    contenedor.style.zIndex = '9999';
+    
+    contenedor.innerHTML = '';
+    
+    // ¡100 particulas!
+    for (let i = 0; i < 100; i++) {
+        const particula = document.createElement('div');
+        
+        particula.style.position = 'absolute';
+        particula.style.background = '#ffffff';
+        particula.style.borderRadius = '50%';
+        
+        // ¡Triple brillo super potente para que se vea en fondos claros y oscuros!
+        particula.style.boxShadow = '0 0 8px #ffffff, 0 0 15px #ffb3ff, 0 0 30px #ffb3ff';
+        
+        // Tamaño ligeramente mayor (entre 2 y 7 píxeles)
+        particula.style.width = (Math.random() * 5 + 2) + 'px';
+        particula.style.height = particula.style.width;
+        
+        // Distribución por toda la pantalla
+        particula.style.left = Math.random() * 100 + 'vw';
+        particula.style.top = Math.random() * 100 + 'vh';
+        
+        // Que nazcan visibles (opacidad entre 0.4 y 1)
+        particula.style.opacity = Math.random() * 0.6 + 0.4;
+        
+        contenedor.appendChild(particula);
+        
+        // Animación más fluida y variada
+        setInterval(() => {
+            particula.style.transform = `translate(${Math.random() * 80 - 40}px, ${Math.random() * 80 - 40}px)`;
+            particula.style.transition = 'transform 4s ease-in-out, opacity 4s ease-in-out';
+            particula.style.opacity = Math.random() * 0.6 + 0.4; // Nunca se vuelven totalmente invisibles
+        }, 3000 + Math.random() * 2000); // Tiempos desfasados para que luzca natural
+    }
+}
 
 // Revisión de estructura de datos
 
